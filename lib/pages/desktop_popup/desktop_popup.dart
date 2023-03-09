@@ -26,6 +26,7 @@ import './translation_target_select_view.dart';
 
 const kMenuItemKeyQuickStartGuide = 'quick-start-guide';
 const kMenuItemKeyQuitApp = 'quit-app';
+const kMenuItemKeyShow = 'show-app';
 
 const kMenuSubItemKeyJoinDiscord = 'subitem-join-discord';
 const kMenuSubItemKeyJoinQQGroup = 'subitem-join-qq';
@@ -238,6 +239,10 @@ class _DesktopPopupPageState extends State<DesktopPopupPage>
             ),
           ),
           MenuItem.separator(),
+          MenuItem(
+            key: kMenuItemKeyShow,
+            label: 'tray_context_menu.item_show'.tr(),
+          ),
           MenuItem(
             key: kMenuItemKeyQuitApp,
             label: 'tray_context_menu.item_quit_app'.tr(),
@@ -906,6 +911,9 @@ class _DesktopPopupPageState extends State<DesktopPopupPage>
         break;
       case kMenuSubItemKeyJoinQQGroup:
         await launch('https://jq.qq.com/?_wv=1027&k=vYQ5jW7y');
+        break;
+      case kMenuItemKeyShow:
+        _windowShow();
         break;
       case kMenuItemKeyQuitApp:
         await trayManager.destroy();
