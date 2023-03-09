@@ -192,6 +192,8 @@ class _DesktopPopupPageState extends State<DesktopPopupPage>
   Future<void> _initTrayIcon() async {
     if (kIsWeb) return;
 
+    _brightness = WidgetsBinding.instance.window.platformBrightness;
+
     String trayIconName =
         kIsWindows ? 'tray_icon_black.ico' : 'tray_icon_black.png';
     if (_brightness == Brightness.dark) {
