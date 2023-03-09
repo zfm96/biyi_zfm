@@ -41,6 +41,7 @@ dependencies:
   uni_translate: ^0.1.1
   url_launcher: ^6.0.17
   window_manager: ^0.2.1
+  file: ^6.1.4
 
 dev_dependencies:
   flutter_test:
